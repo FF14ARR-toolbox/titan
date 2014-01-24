@@ -1,0 +1,260 @@
+[
+	[
+		{
+			"phase" : 1,
+			"action" : "landslide",
+			"delay" : 8.2
+		},
+		{
+			"phase" : 1,
+			"action" : "omomi",
+			"delay" : 8.5
+		},
+		{
+			"phase" : 1,
+			"action" : "mountain",
+			"delay" : 6.5
+		},
+		{
+			"phase" : 1,
+			"action" : "gekisin",
+			"delay" : 5.6
+		},
+		{
+			"phase" : 1,
+			"action" : "landslide",
+			"delay" : 6.6
+		},
+		{
+			"phase" : 1,
+			"action" : "mountain",
+			"delay" : 1000
+		},
+		{
+			"phase" : 1,
+			"action" : "omomi",
+			"delay" : 1000
+		}
+	],
+	[
+		{
+			"phase" : 2,
+			"action" : "landslide",
+			"delay" : 8.7
+		},
+		{
+			"phase" : 2,
+			"action" : "jale",
+			"delay" : 6.7
+		},
+		{
+			"phase" : 2,
+			"action" : "mountain",
+			"delay" : 4.2
+		},
+		{
+			"phase" : 2,
+			"action" : "daigekisin",
+			"delay" : 4.0
+		},
+		{
+			"phase" : 2,
+			"action" : "landslide",
+			"delay" : 7.5
+		},
+		{
+			"phase" : 2,
+			"action" : "gekisin",
+			"delay" : 8.9
+		},
+		{
+			"phase" : 2,
+			"action" : "omomi",
+			"delay" : 6.0
+		},
+		{
+			"phase" : 2,
+			"action" : "mountain",
+			"delay" : 6.3
+		},
+		{
+			"phase" : 2,
+			"action" : "landslide",
+			"delay" : 5.5
+		},
+		{
+			"phase" : 2,
+			"action" : "omomi",
+			"delay" : 9.6
+		},
+		{
+			"phase" : 2,
+			"action" : "bomb",
+			"delay" : 6.3
+		},
+		{
+			"phase" : 2,
+			"action" : "mountain",
+			"delay" : 2.7
+		}
+	],
+	[
+		{
+			"phase" : 3,
+			"action" : "omomi",
+			"delay" : 10.4
+		},
+		{
+			"phase" : 3,
+			"action" : "jale",
+			"delay" : 8.8
+		},
+		{
+			"phase" : 3,
+			"action" : "daigekisin",
+			"delay" : 6.9
+		},
+		{
+			"phase" : 3,
+			"action" : "landslide",
+			"delay" : 7.5
+		},
+		{
+			"phase" : 3,
+			"action" : "gekisin",
+			"delay" : 8.3
+		},
+		{
+			"phase" : 3,
+			"action" : "omomi",
+			"delay" : 6.4
+		},
+		{
+			"phase" : 2,
+			"action" : "bomb",
+			"delay" : 12.5
+		},
+		{
+			"phase" : 3,
+			"action" : "landslide",
+			"delay" : 5.7
+		}
+	],
+	[
+		{
+			"phase" : 4,
+			"action" : "minitako",
+			"delay" : 14.6
+		},
+		{
+			"phase" : 4,
+			"action" : "mountain",
+			"delay" : 4.5
+		},
+		{
+			"phase" : 4,
+			"action" : "bomb",
+			"delay" : 6.4
+		},
+		{
+			"phase" : 4,
+			"action" : "landslide",
+			"delay" : 5.4
+		},
+		{
+			"phase" : 4,
+			"action" : "mountain",
+			"delay" : 7.7
+		},
+		{
+			"phase" : 4,
+			"action" : "omomi",
+			"delay" : 5.5
+		},
+		{
+			"phase" : 4,
+			"action" : "jale",
+			"delay" : 9.1
+		},
+		{
+			"phase" : 4,
+			"action" : "mountain",
+			"delay" : 3.9
+		},
+		{
+			"phase" : 4,
+			"action" : "daigekisin",
+			"delay" : 4.0
+		},
+		{
+			"phase" : 4,
+			"action" : "landslide",
+			"delay" : 7.8
+		},
+		{
+			"phase" : 4,
+			"action" : "mountain",
+			"delay" : 12.6
+		},
+		{
+			"phase" : 4,
+			"action" : "gekisin",
+			"delay" : 3.8
+		},
+		{
+			"phase" : 4,
+			"action" : "omomi",
+			"delay" : 6.3
+		},
+		{
+			"phase" : 4,
+			"action" : "omomi",
+			"delay" : 2.9
+		},
+		{
+			"phase" : 4,
+			"action" : "mountain",
+			"delay" : 6.9
+		},
+		{
+			"phase" : 4,
+			"action" : "bomb",
+			"delay" : 3.5
+		},
+		{
+			"phase" : 4,
+			"action" : "landslide",
+			"delay" : 5.6
+		},
+		{
+			"phase" : 4,
+			"action" : "mountain",
+			"delay" : 11.0
+		},
+		{
+			"phase" : 4,
+			"action" : "bomb",
+			"delay" : 5.4
+		},
+		{
+			"phase" : 4,
+			"action" : "gekisin",
+			"delay" : 6.2
+		},
+		{
+			"phase" : 4,
+			"action" : "omomi",
+			"delay" : 9.2
+		},
+		{
+			"phase" : 4,
+			"action" : "geocrush",
+			"delay" : 9.2
+		},
+		{
+			"phase" : 4,
+			"action" : "landslide",
+			"delay" : 9.2
+		}
+	]
+]

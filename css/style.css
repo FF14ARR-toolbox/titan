@@ -1,0 +1,84 @@
+body { 
+  background: url(/img/titan.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.progress-bar {
+  -webkit-transition: width 0.2s ease;
+          transition: width 0.2s ease;
+}
+
+#buttons {
+	text-align: center;
+	margin: 30px;
+}
+
+.direct-phase-buttons {
+	margin-top: 30px;
+}
+
+div.item {
+	padding: 30px 0px;
+	margin: 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-align: center;
+	opacity: 0.5;
+	border-right: 4px dotted white; 
+}
+
+div.landslide {
+	background: #42bdc2;
+	color: #FFF;
+}
+
+div.omomi {
+	background: orange;
+	color: #FFF;
+}
+
+div.mountain {
+	background: red;
+	color: #FFF;
+}
+
+div.gekisin {
+	background: brown;
+	color: #FFF;
+}
+
+div.daigekisin {
+	background: brown;
+	color: #FFF;
+}
+
+div.jale {
+	background: green;
+	color: #FFF;
+}
+
+div.bomb {
+	background: red;
+	color: #FFF;
+}
+
+p.display-eng {
+	font-size: 24px;
+	font-family: 'Wendy One', sans-serif;
+}
+
+p.display-jpn {
+	font-size: small;
+}
+
+#wrapVolumeControll {
+	text-align: center;
+}
+
+#volumeControll {
+	width: 300px;
+}

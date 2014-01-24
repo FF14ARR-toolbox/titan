@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Extream Titan Timer/極たこたいまー:極タイタンの次の行動を音声でお知らせ[新生FF14]</title>
+    <link href='http://fonts.googleapis.com/css?family=Wendy+One' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="どうしても極タイタンに勝てない・・・そんなあなたにっ！極タイタンの次の行動を音声でお知らせします。ゆっくりしていってね！">
+    <meta name="author" content="maccotsan">
+    <link href="favicon.ico" type="image/x-icon" rel="icon" />
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
+
+    <link rel="stylesheet" href="css/state.bootstrap.css" media="screen">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="css/jquery.nouislider.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+         <ul class="nav navbar-nav">
+          <a class="navbar-brand" href="/">
+            Extream Titan Timer/極たこたいまー
+            <span>
+              :<small>極タイタンの次の行動を音声でお知らせ[新生FF14]</small>
+            </span>
+          </a>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <i class="glyphicon glyphicon-volume-up"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <div id='wrapVolumeControll'>
+            <div id='volumeControll'></div>
+          </div>
+        </ul>
+      </li>
+    </ul>
+
+      </div>
+    </nav>
+    <div class="container">
+      <h1 class='phase-info'>Phase: Stop</h1>
+
+      <div id='owlCarousels'></div>
+
+      <div class="progress progress-striped active">
+        <div class="progress-bar progress-bar-danger" style="width:100%;"></div>
+      </div>
+
+      <div id='buttons'>
+        <div>
+          <button type='button' class='btn btn-lg btn-success phase-next'>
+            Next Phase <i class="glyphicon glyphicon-hand-right"></i> <br>着地と同時に押す！
+          </button>
+        </div>
+        <div class='direct-phase-buttons'>
+          <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='1'>Phase1</button>
+          <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='2'>Phase2</button>
+          <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='3'>Phase3</button>
+          <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='4'>Phase4</button>
+          <button type='button' class='btn btn-sm btn-default phase-reset'>Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">
+          <a href='http://twitter.com/maccotsan' target='_blank'>@maccotsan</a>
+          <br>
+          <a href='http://sozaii.ff14.maccotsan.com/' target='_blank'>
+            <i class="glyphicon glyphicon-cloud"></i>
+            Sozaii!! :複数レシピの作成に必要な素材の数を計算しておまとめ</a>
+          <br>
+          <a href='http://tretimer.ff14.maccotsan.com/' target='_blank'>
+            <i class="glyphicon glyphicon-cloud"></i>
+            とれたいまー :トレハン地図げっとした時間を記録
+          </a>
+          <br>
+          記載されている会社名・製品名・システム名などは、各社の商標、または登録商標です。
+          <br>
+          Copyright (C) 2010 - 2013 SQUARE ENIX CO., LTD. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+
+    <!-- SE -->
+    <audio id="landslideSound" preload="auto">
+       <source src="sounds/landslide.wav" type="audio/wav">
+    </audio>
+    <audio id="omomiSound" preload="auto">
+       <source src="sounds/omomi.wav" type="audio/wav">
+    </audio>
+    <audio id="mountainSound" preload="auto">
+       <source src="sounds/mountain.wav" type="audio/wav">
+    </audio>
+    <audio id="gekisinSound" preload="auto">
+       <source src="sounds/gekisin.wav" type="audio/wav">
+    </audio>
+    <audio id="jaleSound" preload="auto">
+       <source src="sounds/jale.wav" type="audio/wav">
+    </audio>
+    <audio id="bombSound" preload="auto">
+       <source src="sounds/bomb.wav" type="audio/wav">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="owl-carousel/owl.carousel.js"></script>
+    <script src="js/jquery.nouislider.min.js"></script>
+    <script src="js/titan.js"></script>
+  </body>
+</html>
