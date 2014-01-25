@@ -5,7 +5,7 @@
     <title>Extream Titan Timer/極たこたいまー:極タイタンの次の行動を音声でお知らせ[新生FF14]</title>
     <link href='http://fonts.googleapis.com/css?family=Wendy+One' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="どうしても極タイタンに勝てない・・・そんなあなたにっ！極タイタンの次の行動を音声でお知らせします。ゆっくりしていってね！">
+    <meta name="description" content="どうしても極タイタンに勝てない・・・もうやだ、、、そんなあなたにっ！極タイタンの次の行動を音声でお知らせします。ゆっくりしていってね！">
     <meta name="author" content="maccotsan">
     <link href="favicon.ico" type="image/x-icon" rel="icon" />
     <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
@@ -15,6 +15,22 @@
     <link rel="stylesheet" href="owl-carousel/owl.theme.css">
     <link rel="stylesheet" href="css/jquery.nouislider.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!--
+      　　 _,,....,,_　 ＿人人人人人人人人人人人人人人人＿
+-''":::::::::::::｀''＞　　　ゆっくりしていってね！！！　　　＜
+ヽ:::::::::::::::::::::￣^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^￣
+　|::::::;ノ´￣＼:::::::::::＼_,. -‐ｧ　　　　　＿_　　 _____　　 ＿_____
+　|::::ﾉ　　　ヽ､ヽr-r'"´　　（.__　　　　,´　_,, '-´￣￣｀-ゝ 、_ イ、
+_,.!イ_　　_,.ﾍｰｧ'二ﾊ二ヽ､へ,_7　　　'r ´　　　　　　　　　　ヽ、ﾝ、
+::::::rｰ''7ｺ-‐'"´　 　 ;　 ',　｀ヽ/｀7　,'＝=─-　　　 　 -─=＝',　i
+r-'ｧ'"´/　 /!　ﾊ 　ハ　 !　　iヾ_ﾉ　i　ｲ　iゝ、ｲ人レ／_ルヽｲ i　|
+!イ´ ,' |　/__,.!/　V　､!__ﾊ　 ,'　,ゝ　ﾚﾘｲi (ﾋ_] 　　 　ﾋ_ﾝ ).| .|、i .||
+`! 　!/ﾚi'　(ﾋ_] 　　 　ﾋ_ﾝ ﾚ'i　ﾉ　　　!Y!""　 ,＿__, 　 "" 「 !ﾉ i　|
+,'　 ﾉ 　 !'"　 　 ,＿__,　 "' i .ﾚ'　　　　L.',.　 　ヽ _ﾝ　　　　L」 ﾉ| .|
+　（　　,ﾊ　　　　ヽ _ﾝ　 　人! 　　　　 | ||ヽ、　　　　　　 ,ｲ| ||ｲ| /
+,.ﾍ,）､　　）＞,､ _____,　,.イ　 ハ　　　　レ ル｀ ー─ ´ルﾚ　ﾚ´
+`   -->
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -49,7 +65,10 @@
       </div>
     </nav>
     <div class="container">
-      <h1 class='phase-info'>Phase: Stop</h1>
+      <h1 class='phase-info'>
+        Phase: <span class='phase-count-holder'>Stop</span>
+        <small>Loop: <span class='loop-count-holder'>1</span></small>
+      </h1>
 
       <div id='owlCarousels'></div>
 
@@ -60,7 +79,11 @@
       <div id='buttons'>
         <div>
           <button type='button' class='btn btn-lg btn-success phase-next'>
-            Next Phase <i class="glyphicon glyphicon-hand-right"></i> <br>着地と同時に押す！
+            <p class='next-phase-infomation'>
+              Next Phase <span class='next-phase-count-holder'></span>
+              <i class="glyphicon glyphicon-hand-right"></i>
+            </p>
+            <p class='next-phase-trigger-text'>Start</p>
           </button>
         </div>
         <div class='direct-phase-buttons'>
@@ -68,6 +91,7 @@
           <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='2'>Phase2</button>
           <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='3'>Phase3</button>
           <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='4'>Phase4</button>
+          <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='5'>Phase5</button>
           <button type='button' class='btn btn-sm btn-default phase-reset'>Reset</button>
         </div>
       </div>
@@ -107,18 +131,52 @@
     <audio id="gekisinSound" preload="auto">
        <source src="sounds/gekisin.wav" type="audio/wav">
     </audio>
+    <audio id="daigekisinSound" preload="auto">
+       <source src="sounds/daigekisin.wav" type="audio/wav">
+    </audio>
     <audio id="jaleSound" preload="auto">
        <source src="sounds/jale.wav" type="audio/wav">
     </audio>
     <audio id="bombSound" preload="auto">
        <source src="sounds/bomb.wav" type="audio/wav">
     </audio>
+    <audio id="geocrushSound" preload="auto">
+       <source src="sounds/geocrush.wav" type="audio/wav">
+    </audio>
+    <audio id="minitakoSound" preload="auto">
+       <source src="sounds/minitako.wav" type="audio/wav">
+    </audio>
 
     <!-- Scripts -->
     <script src="//code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="owl-carousel/owl.carousel.js"></script>
-    <script src="js/jquery.nouislider.min.js"></script>
-    <script src="js/titan.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/owl-carousel/owl.carousel.js"></script>
+    <script src="/js/jquery.nouislider.min.js"></script>
+    <script src="/js/jquery.titan.js"></script>
+    <script>
+      $(document).ready(function() {
+        $.titan({
+          jsons: "/json/titan_extream"
+        });
+
+        $("#volumeControll").noUiSlider({
+          range: [0, 100],
+          start: 100,
+          handles: 1,
+          connect: "lower",
+          //orientation: "vertical",
+          serialization: {
+            resolution: 1
+          },
+          slide: function() {
+            var slideVal = $(this).val();
+            $('audio').each(function() {
+              var volume = slideVal / 100;
+              $(this).get(0).volume = volume;
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>

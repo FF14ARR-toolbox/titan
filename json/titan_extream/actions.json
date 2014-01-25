@@ -27,7 +27,7 @@
 		"displayJpn" : "大激震",
 		"displayEng" : "Upheaval",
 		"class" : "daigekisin",
-		"sound" : "#gekisinSound"
+		"sound" : "#daigekisinSound"
 	},
 	"jale" : {
 		"displayJpn" : "グラナイトジェイル",
@@ -45,12 +45,12 @@
 		"displayJpn" : "ジオクラッシュ",
 		"displayEng" : "Geocrush",
 		"class" : "geocrush",
-		"sound" : "#bombSound"
+		"sound" : "#geocrushSound"
 	},
 	"minitako" : {
 		"displayJpn" : "グラナイトジェイラー",
 		"displayEng" : "Granite Gaoler",
 		"class" : "minitako",
-		"sound" : "#bombSound"
+		"sound" : "#minitakoSound"
 	}
 }
