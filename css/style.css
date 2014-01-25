@@ -1,94 +1,30 @@
-body { 
-  background: url(/img/titan.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.owl-carousel {
+	margin-top: 50px;
 }
 
-.progress-bar {
-  -webkit-transition: width 0.2s ease;
-          transition: width 0.2s ease;
-}
-
-#buttons {
-	text-align: center;
-	margin: 30px;
-}
-
-.direct-phase-buttons {
-	margin-top: 30px;
-}
-
-div.item {
-	padding: 30px 0px;
-	margin: 5px;
+.carousel-link {
+	padding: 130px 0px;
+	display: block;
+	width: 100%;
+	height: auto;
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+	font-size: 48px;
 	text-align: center;
-	opacity: 0.7;
-	border-right: 4px dotted white; 
+	
+	font-family: 'Rock Salt', cursive;
+
 }
 
-div.landslide {
-	background: #42bdc2;
-	color: #FFF;
+.extream {
+	background-image: url(/img/titan.jpg);
+	background-repeat: no-repeat;
+	background-position: -450px -250px;
 }
 
-div.omomi {
-	background: orange;
-	color: #FFF;
-}
-
-div.mountain {
-	background: red;
-	color: #FFF;
-}
-
-div.gekisin {
-	background: brown;
-	color: #FFF;
-}
-
-div.daigekisin {
-	background: #752677;
-	color: #FFF;
-}
-
-div.jale {
-	background: green;
-	color: #FFF;
-}
-
-div.bomb {
-	background: grey;
-	color: #FFF;
-}
-
-div.geocrush {
-	background: black;
-	color: #FFF;
-}
-
-div.minitako {
-	background: #9E9300;
-	color: #FFF;
-}
-
-p.display-eng {
-	font-size: 22px;
-	font-family: 'Wendy One', sans-serif;
-}
-
-p.display-jpn {
-	font-size: small;
-}
-
-#wrapVolumeControll {
-	text-align: center;
-}
-
-#volumeControll {
-	width: 300px;
+.hard {
+	background-image: url(/img/titan.jpg);
+	background-repeat: no-repeat;
+	background-position: -650px -450px;
 }

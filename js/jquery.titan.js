@@ -92,9 +92,6 @@
 		*/
 		function updatePhaseCountHolder() {
 			var PhaseCount = phase;
-			if (PhaseCount == 0) {
-				PhaseCount = 'Stop';
-			}
 			$(".phase-count-holder").text(PhaseCount);
 			$(".loop-count-holder").text(loop);
 		}
