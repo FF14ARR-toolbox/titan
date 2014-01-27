@@ -3,54 +3,54 @@
 		"displayJpn" : "ランドスライド",
 		"displayEng" : "Landslide",
 		"class" : "landslide",
-		"sound" : "#landslideSound"
+		"sound" : "landslide"
 	},
 	"omomi" : {
 		"displayJpn" : "大地の重み",
 		"displayEng" : "Weight of the Land",
 		"class" : "omomi",
-		"sound" : "#omomiSound"
+		"sound" : "omomi"
 	},
 	"mountain" : {
 		"displayJpn" : "マウンテンバスター",
 		"displayEng" : "Mountain Buster",
 		"class" : "mountain",
-		"sound" : "#mountainSound"
+		"sound" : "mountain"
 	},
 	"gekisin" : {
 		"displayJpn" : "激震",
 		"displayEng" : "Tumult",
 		"class" : "gekisin",
-		"sound" : "#gekisinSound"
+		"sound" : "gekisin"
 	},
 	"daigekisin" : {
 		"displayJpn" : "大激震",
 		"displayEng" : "Upheaval",
 		"class" : "daigekisin",
-		"sound" : "#daigekisinSound"
+		"sound" : "daigekisin"
 	},
 	"jale" : {
 		"displayJpn" : "グラナイトジェイル",
 		"displayEng" : "Rock Throw",
 		"class" : "jale",
-		"sound" : "#jaleSound"
+		"sound" : "jale"
 	},
 	"bomb" : {
 		"displayJpn" : "ボムボルダー",
 		"displayEng" : "Bomb Boulder",
 		"class" : "bomb",
-		"sound" : "#bombSound"
+		"sound" : "bomb"
 	},
 	"geocrush" : {
 		"displayJpn" : "ジオクラッシュ",
 		"displayEng" : "Geocrush",
 		"class" : "geocrush",
-		"sound" : "#geocrushSound"
+		"sound" : "geocrush"
 	},
 	"minitako" : {
 		"displayJpn" : "グラナイトジェイラー",
 		"displayEng" : "Granite Gaoler",
 		"class" : "minitako",
-		"sound" : "#minitakoSound"
+		"sound" : "minitako"
 	}
 }

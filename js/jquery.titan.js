@@ -11,6 +11,13 @@
 		// フェーズ設定
 		var settings;
 
+		// zynga jukeboxの設定
+		var zyngaSettings;
+
+		// zynga jukebox player
+		var se;
+		var soundTimer;
+
 		// 現在のフェーズ 0は停止
 		var phase = 0;
 
@@ -22,9 +29,6 @@
 
 		// Action Timer
 		var actionTimer;
-
-		// カルーセルエフェクトTimer
-		var effectTimer;
 
 		// プログレスバーTimer
 		var progressBarTimer;
@@ -44,7 +48,7 @@
 		/*
 		* データの読み込み
 		*/
-		function loadJsons() {
+		function loadData() {
 			// 同期モードでJSON読み込み
 			$.ajaxSetup({async: false});
 			$.getJSON(options.jsons + "/actions.json", function(json) {
@@ -56,7 +60,23 @@
 			$.getJSON(options.jsons + "/settings.json", function(json){
 				settings = json;
 			});
+			$.getJSON(options.jsons + "/zynga.json", function(json){
+				zyngaSettings = json;
+			});
 			$.ajaxSetup({async: true});
+
+			loadSounds();
+		}
+
+		/*
+		* SEの読み込み
+		*/
+		function loadSounds() {
+			se = new jukebox.Player(zyngaSettings);
+			se.context.addEventListener('canplay', function() {
+				$('.sound-worning').hide();
+				$('.sound-success').show();
+			}, false);
 		}
 
 		/*
@@ -122,17 +142,21 @@
 
 			if (phase == 0) {
 				clearTimeout(actionTimer);
-				clearTimeout(effectTimer);
 				clearTimeout(progressBarTimer);
-				$('.progress-bar').css('width', 100 + '%')
+				$('.progress').hide();
+				$('.progress-bar').css('width', 100 + '%');
+			} else {
+				$('.progress').show();
 			}
 
 			updatePhaseCountHolder();
 			updatePhaseNextButton();
 			refreshCarousel();
 			setAction();
-		}
 
+			$('.sound-success').hide();
+		}
+var f;
 		/*
 		* 現在の行動をセット
 		*/
@@ -149,20 +173,66 @@
 			var owl = $(".owl-carousel").data('owlCarousel');
 			owl.goTo(pos);
 
+			// iOSでplay()時に頭出しがおかしいので再生終了時に次の再生位置を手動でセットしておく
+			//$('.infomation').text('');
+			
+
+			var nextPos = pos + 1;
+			if (nextPos >= pattern.length) {
+				nextPos = 0;
+			}
+			var next = actions[pattern[nextPos]['action']];
+			var nextSoundStartPos = zyngaSettings['spritemap'][next['sound']]['start'];
+			console.log('===========');
+			se.context.removeEventListener('pause', f, false);
+			f = (function() {
+	            var p = nextPos;
+	            var n = nextSoundStartPos;
+	            return function() {
+	            	console.log('next: ' + p + ' / ' + n);
+					if (se.getCurrentTime() > n) {
+						//$('.infomation').append('next: ' + p + '/' + n);
+						se.setCurrentTime(n);
+					}
+	            }
+	        })();
+
+	        var ss = (function() {
+	            var p = nextPos;
+	            var n = nextSoundStartPos;
+	            return function() {
+	            	//console.log(n);
+					var log = se.getCurrentTime() + ' => ' + n;
+					$('.infomation').text(log);
+	            }
+	        })();
+	        setInterval(ss, 100);
+
+			se.context.addEventListener('pause', f, false);
+
+			// 頭出しされていなければ頭出し
+			var soundStartPos = zyngaSettings['spritemap'][action['sound']]['start'];
+			if (se.getCurrentTime() > soundStartPos) {
+				se.setCurrentTime(soundStartPos);
+				$('.infomation').text('current: ' + pos + '/' + soundStartPos);
+			}
+
 			// SE鳴らす
-			$(action['sound']).get(0).play();
+			se.play(action['sound'], true);
 
 			// 次のアクションタイマーのセット
 			clearTimeout(actionTimer);
-			actionTimer = setTimeout(function(){
+			actionTimer = setTimeout(function() {
 				nextAction();
 			}, pattern[pos]['delay'] * 1000);
 
-			// カレントカルーセル明滅エフェクトのセット
-			clearTimeout(effectTimer);
-			effectTimer = setInterval(function(){
-				$('#patternAction' + pos).fadeOut(500, function(){ $(this).fadeIn(500) });
-			}, 1000);
+			// カレントパネルの強調
+			var previewPos = pos - 1;
+			if(previewPos < 0) {
+				previewPos = pattern.length - 1;
+			}
+			$('#patternAction' + pos).addClass('item-active');
+			$('#patternAction' + previewPos).removeClass('item-active');
 
 			// プログレスバーアニメーションのセット
 			delay = delayTo = pattern[pos]['delay'] * 1000;
@@ -206,8 +276,24 @@
 		$(document).on('click', "button.phase-reset", function() {
 			goToPhase(0);
 		});
- 
-		loadJsons();
+
+		$(document).on('click', ".load-sound", function() {
+			$(".load-sound").text('読み込み中...');
+			se.play('mute');
+			se.stop();
+			return false;
+		});
+
+		$(document).on('click', "button.play-sound", function() {
+			var sound = $(this).attr('data-sound');
+			console.log(se.context);
+			var s=zyngaSettings['spritemap'][actions[sound]['sound']]['start'];
+			console.log(s);
+			se.setCurrentTime(s);
+			se.play(sound,true);
+		});
+
+		loadData();
 		refreshCarousel();
 		updatePhaseNextButton();
 

@@ -51,7 +51,8 @@ r-'ｧ'"´/　 /!　ﾊ 　ハ　 !　　iヾ_ﾉ　i　ｲ　iゝ、ｲ人レ�
             </span>
           </a>
         </ul>
-
+        
+        <!--
         <ul class="nav navbar-nav navbar-right">
           <li><a href="/hard/"><strong>真</strong></a></li>
           <li class="dropdown">
@@ -65,7 +66,7 @@ r-'ｧ'"´/　 /!　ﾊ 　ハ　 !　　iヾ_ﾉ　i　ｲ　iゝ、ｲ人レ�
             </ul>
           </li>
         </ul>
-
+        -->
       </div>
     </nav>
     <div class="container">
@@ -76,7 +77,18 @@ r-'ｧ'"´/　 /!　ﾊ 　ハ　 !　　iヾ_ﾉ　i　ｲ　iゝ、ｲ人レ�
 
       <div id='owlCarousels'></div>
 
-      <div class="progress progress-striped active">
+      <div class='infomation alert alert-info'>
+      </div>
+
+      <div class='sound-worning alert alert-warning'>
+        <i class="glyphicon glyphicon-warning-sign"></i> 
+        <a href='#' class='load-sound'>ここを押してサウンドを読み込んでください</a>
+      </div>
+      <div class='sound-success alert alert-success' style='display:none;'>
+        <i class="glyphicon glyphicon-ok"></i> Sound OK
+      </div>
+
+      <div class="progress progress-striped active" style='display:none;'>
         <div class="progress-bar progress-bar-danger" style="width:100%;"></div>
       </div>
 
@@ -97,6 +109,23 @@ r-'ｧ'"´/　 /!　ﾊ 　ハ　 !　　iヾ_ﾉ　i　ｲ　iゝ、ｲ人レ�
           <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='4'>Phase4</button>
           <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='5'>Phase5</button>
           <button type='button' class='btn btn-sm btn-default phase-reset'>Reset</button>
+
+          <!--
+          <fieldset>
+            <legend>Sound Test</legend>
+            <button type='button' class='btn btn-sm btn-danger load-sound'>Load Sounds</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='landslide'>landslide</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='omomi'>omomi</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='mountain'>mountain</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='gekisin'>gekisin</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='daigekisin'>daigekisin</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='jale'>jale</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='bomb'>bomb</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='minitako'>minitako</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='geocrush'>geocrush</button>
+          </fieldset>
+          -->
+          
         </div>
       </div>
     </div>
@@ -122,47 +151,16 @@ r-'ｧ'"´/　 /!　ﾊ 　ハ　 !　　iヾ_ﾉ　i　ｲ　iゝ、ｲ人レ�
       </div>
     </div>
 
-    <!-- SE -->
-    <audio id="landslideSound" preload="auto">
-       <source src="/sounds/landslide.wav" type="audio/wav">
-    </audio>
-    <audio id="omomiSound" preload="auto">
-       <source src="/sounds/omomi.wav" type="audio/wav">
-    </audio>
-    <audio id="mountainSound" preload="auto">
-       <source src="/sounds/mountain.wav" type="audio/wav">
-    </audio>
-    <audio id="gekisinSound" preload="auto">
-       <source src="/sounds/gekisin.wav" type="audio/wav">
-    </audio>
-    <audio id="daigekisinSound" preload="auto">
-       <source src="/sounds/daigekisin.wav" type="audio/wav">
-    </audio>
-    <audio id="jaleSound" preload="auto">
-       <source src="/sounds/jale.wav" type="audio/wav">
-    </audio>
-    <audio id="bombSound" preload="auto">
-       <source src="/sounds/bomb.wav" type="audio/wav">
-    </audio>
-    <audio id="geocrushSound" preload="auto">
-       <source src="/sounds/geocrush.wav" type="audio/wav">
-    </audio>
-    <audio id="minitakoSound" preload="auto">
-       <source src="/sounds/minitako.wav" type="audio/wav">
-    </audio>
-
     <!-- Scripts -->
     <script src="//code.jquery.com/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/owl-carousel/owl.carousel.js"></script>
+    <script src="/js/zynga-jukebox/src/Player.js"></script>
+    <script src="/js/zynga-jukebox/src/Manager.js"></script>
     <script src="/js/jquery.nouislider.min.js"></script>
     <script src="/js/jquery.titan.js"></script>
     <script>
       $(document).ready(function() {
-        var open_can_audio = new Audio( "/sounds/daigekisin.wav" );
-        open_can_audio.load();
-        open_can_audio.play();
-
         $.titan({
           jsons: "./json"
         });
