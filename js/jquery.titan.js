@@ -120,11 +120,6 @@
 		* Nextボタンの表示を更新
 		*/
 		function updatePhaseNextButton() {
-			if (settings[phase]['nextPhase'] == 0) {
-				$(".next-phase-infomation").hide();
-			} else {
-				$(".next-phase-infomation").show();
-			}
 			$(".next-phase-count-holder").text(settings[phase]['nextPhase']);
 			$(".next-phase-trigger-text").text(settings[phase]['text']);
 		}

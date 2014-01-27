@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Extream Titan Timer/極たこたいまー:極タイタンの次の行動を音声でお知らせ[新生FF14]</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="どうしても極タイタンに勝てない・・・もうやだ、、、そんなあなたにっ！極タイタンの次の行動を音声でお知らせします。ゆっくりしていってね！">
+    <meta name="author" content="maccotsan">
+    <link href="favicon.ico" type="image/x-icon" rel="icon" />
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
+
+    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/css/state.bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="/css/jquery.nouislider.min.css">
+    <link rel="stylesheet" href="/css/titan.css">
+
+    <!--
+      　　 _,,....,,_　 ＿人人人人人人人人人人人人人人人＿
+-''":::::::::::::｀''＞　　　ゆっくりしていってね！！！　　　＜
+ヽ:::::::::::::::::::::￣^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^Ｙ^￣
+　|::::::;ノ´￣＼:::::::::::＼_,. -‐ｧ　　　　　＿_　　 _____　　 ＿_____
+　|::::ﾉ　　　ヽ､ヽr-r'"´　　（.__　　　　,´　_,, '-´￣￣｀-ゝ 、_ イ、
+_,.!イ_　　_,.ﾍｰｧ'二ﾊ二ヽ､へ,_7　　　'r ´　　　　　　　　　　ヽ、ﾝ、
+::::::rｰ''7ｺ-‐'"´　 　 ;　 ',　｀ヽ/｀7　,'＝=─-　　　 　 -─=＝',　i
+r-'ｧ'"´/　 /!　ﾊ 　ハ　 !　　iヾ_ﾉ　i　ｲ　iゝ、ｲ人レ／_ルヽｲ i　|
+!イ´ ,' |　/__,.!/　V　､!__ﾊ　 ,'　,ゝ　ﾚﾘｲi (ﾋ_] 　　 　ﾋ_ﾝ ).| .|、i .||
+`! 　!/ﾚi'　(ﾋ_] 　　 　ﾋ_ﾝ ﾚ'i　ﾉ　　　!Y!""　 ,＿__, 　 "" 「 !ﾉ i　|
+,'　 ﾉ 　 !'"　 　 ,＿__,　 "' i .ﾚ'　　　　L.',.　 　ヽ _ﾝ　　　　L」 ﾉ| .|
+　（　　,ﾊ　　　　ヽ _ﾝ　 　人! 　　　　 | ||ヽ、　　　　　　 ,ｲ| ||ｲ| /
+,.ﾍ,）､　　）＞,､ _____,　,.イ　 ハ　　　　レ ル｀ ー─ ´ルﾚ　ﾚ´
+`   -->
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+         <ul class="nav navbar-nav">
+          <a class="navbar-brand" href="/">
+            <i class="glyphicon glyphicon-cloud"></i>
+            Extream Titan Timer/極たこたいまー
+            <span>
+              :<small>極タイタンの次の行動を音声でお知らせ[新生FF14]</small>
+            </span>
+          </a>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>FAQ</h1>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Q.いつボタン押せばいいの？
+        </div>
+        <div class="panel-body">
+          A.最初は戦闘開始時（タンクがタゲ取った瞬間/たこたんが台詞言った瞬間）、以降はジオクラッシュや大地の怒り前にジャンプして、着地した瞬間です。<br>
+          ボタンを押すとフェーズが切り替わり、最初の行動をアナウンスします。
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Q.タイミングずれるんだけど？
+        </div>
+        <div class="panel-body">
+          A.基準となる動画を元にしてタイミングを測っているので、そのときのPTによっては進行が早かったり遅かったりすると思いますが、原因は謎です。（微量の移動とか？）いくつかの動画でテストしてみましたが、だいたいは合ってるんじゃないかなーと思ってるので、あとは気合いでなんとかしてください！タイミングについては実践を交えつつ随時調整していくつもりです。
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Q.フェーズ５って何？極は４まででしょ？
+        </div>
+        <div class="panel-body">
+          A.フェーズ４は長いので、どうしてもタイミングがずれてくることがあると思います。<br>
+          なので必要な場合は、ジオクラッシュの着地タイミングでタイミングをリセットしてください。<br>
+          必要なければ、フェーズ５は無視して大丈夫です。なおフェーズ５（フェーズ４ループ２）が終わると時間切れ全滅のもようです。
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Q.フェーズ２の最後のボムとちゃぶ台が逆
+        </div>
+        <div class="panel-body">
+          A.毎回順番が前後するみたいなので、あそこだけちょっと注意して戦ってみてください。
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Q.音でないorなんかおかしい
+        </div>
+        <div class="panel-body">
+          A.すみません＞＜お使いのブラウザもしくは機器に対応していない可能性が高いです。<br>
+          テストはChrome/Firefox/Safari(全てMacOS)、iOS6のSafari(iPhone/iPad)で行ってます。
+        </div>
+      </div>
+
+      <div class="page-header">
+        <h1>更新履歴</h1>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">2014.1.28</div>
+          <div class="panel-body">
+            一般公開
+          </div>
+      </div>
+
+      <a href='/extream/'>
+        <button type='button' class='btn btn-lg btn-default' data-phase='2'>戻る</button>
+      </a>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">
+          <a href='http://twitter.com/maccotsan' target='_blank'>@maccotsan</a>
+          <br>
+          <a href='http://sozaii.ff14.maccotsan.com/' target='_blank'>
+            <i class="glyphicon glyphicon-cloud"></i>
+            Sozaii!! :複数レシピの作成に必要な素材の数を計算しておまとめ</a>
+          <br>
+          <a href='http://tretimer.ff14.maccotsan.com/' target='_blank'>
+            <i class="glyphicon glyphicon-cloud"></i>
+            とれたいまー :トレハン地図げっとした時間を記録
+          </a>
+          <br>
+          記載されている会社名・製品名・システム名などは、各社の商標、または登録商標です。
+          <br>
+          Copyright (C) 2010 - 2013 SQUARE ENIX CO., LTD. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
