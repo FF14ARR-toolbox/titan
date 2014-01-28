@@ -77,9 +77,6 @@ r-'ｧ'"´/　 /!　ﾊ 　ハ　 !　　iヾ_ﾉ　i　ｲ　iゝ、ｲ人レ�
 
       <div id='owlCarousels'></div>
 
-      <div class='infomation alert alert-info'>
-      </div>
-
       <div class='sound-worning alert alert-warning'>
         <i class="glyphicon glyphicon-warning-sign"></i> 
         <a href='#' class='load-sound'>ここを押してサウンドを読み込んでください</a>
@@ -162,9 +159,15 @@ r-'ｧ'"´/　 /!　ﾊ 　ハ　 !　　iヾ_ﾉ　i　ｲ　iゝ、ｲ人レ�
     <script src="/js/zynga-jukebox/src/Player.js"></script>
     <script src="/js/zynga-jukebox/src/Manager.js"></script>
     <script src="/js/jquery.nouislider.min.js"></script>
-    <script src="/js/jquery.titan.js"></script>
+    <script src="/js/titan.js"></script>
     <script>
       $(document).ready(function() {
+        var titan = new Titan({
+          jsons: './jsons'
+        })
+        titan.init();
+
+        /*
         $.titan({
           jsons: "./json"
         });
@@ -186,6 +189,7 @@ r-'ｧ'"´/　 /!　ﾊ 　ハ　 !　　iヾ_ﾉ　i　ｲ　iゝ、ｲ人レ�
             });
           }
         });
+        */
       });
     </script>
   </body>
