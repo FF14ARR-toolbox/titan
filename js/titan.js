@@ -108,7 +108,7 @@ Titan.prototype = {
 			display += "<p class='display-jpn'>" + action['displayJpn'] + "</p>";
 			var id = 'patternAction' + parseInt(i);
 			var classname = "item " + action['class'];
-			html += "<div class='" + classname + "' id='" + id + "'>" + display + "</div>";
+			html += "<div class='" + classname + "' id='" + id + "' data-pos='" + parseInt(i) + "'>" + display + "</div>";
 		}
 		html += '</div>';
 		$("#owlCarousels").html(html);
