@@ -80,6 +80,10 @@ Titan.prototype = {
 	* SEの読み込み
 	*/
 	__loadSounds: function() {
+		if (ua.isAndroid) {
+		    this.zyngaSettings.resources = ['/sounds/titan.mp3'];
+		}
+
 		this.player = new jukebox.Player(this.zyngaSettings);
 		this.player.context.addEventListener('canplay', function() {
 			$('.sound-worning').hide();
@@ -244,6 +248,10 @@ Titan.prototype = {
 			$(".loop-count-holder").text(this.loop);
 		}
 		this.__setAction();
+
+		// Next Phaseボタンを有効化
+		$('.phase-next').attr('disabled', false);
+		$('.phase-next').removeAttr('disabled');
 	},
 
 	/*
@@ -262,8 +270,14 @@ Titan.prototype = {
 			clearTimeout(this.progressBarTimer);
 			$('.progress').hide();
 			$('.progress-bar').css('width', 100 + '%');
+
+			// Next Phaseボタンを有効化
+			$('.phase-next').attr('disabled', false);
+			$('.phase-next').removeAttr('disabled');
 		} else {
 			$('.progress').show();
+			// ２回押しを防ぐため、すぐには次のフェーズに進めないようにする
+			$('.phase-next').attr('disabled', true);
 		}
 
 		this.__updatePhaseCountHolder();
@@ -299,10 +313,11 @@ Titan.prototype = {
 
 		// sound test buttons
 		$(document).on('click', "button.play-sound", function() {
+			$('.phase-count-holder').text(titan.player.resource);
 			var sound = $(this).attr('data-sound');
-			var s = zyngaSettings['spritemap'][actions[sound]['sound']]['start'];
-			se.setCurrentTime(s);
-			se.play(sound,true);
+			var s = titan.zyngaSettings['spritemap'][titan.actions[sound]['sound']]['start'];
+			titan.player.setCurrentTime(s);
+			titan.player.play(sound, true);
 		});
 
 		this.__loadData();
