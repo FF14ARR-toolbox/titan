@@ -1,0 +1,60 @@
+{
+	"resources" : [
+		"/sounds/titan.caf",
+		"/sounds/titan.ogg",
+		"/sounds/titan.mp3",
+		"/sounds/titan.wav"
+	],
+	"spritemap" : {
+		"landslide": {
+			"start": 0.900,
+			"end": 2.816,
+			"loop": false
+		},
+		"omomi" : {
+			"start": 4.100,
+			"end": 5.124,
+			"loop": false
+		},
+		"mountain" : {
+			"start": 5.600,
+			"end": 8.820,
+			"loop": false
+		},
+		"gekisin" : {
+			"start": 9.800,
+			"end": 11.011,
+			"loop": false
+		},
+		"daigekisin" : {
+			"start": 11.600,
+			"end": 13.201,
+			"loop": false
+		},
+		"jale" : {
+			"start": 14.300,
+			"end": 15.587,
+			"loop": false
+		},
+		"bomb" : {
+			"start": 16.000,
+			"end": 17.739,
+			"loop": false
+		},
+		"geocrush" : {
+			"start": 18.462,
+			"end": 20.047,
+			"loop": false
+		},
+		"minitako" : {
+			"start": 20.770,
+			"end": 22.762,
+			"loop": false
+		},
+		"mute" : {
+			"start": 23.000,
+			"end": 23.500,
+			"loop": false
+		}
+	}
+}

@@ -1,0 +1,38 @@
+[
+	{
+		"phase" : 0,
+		"nextPhase" : 1,
+		"trigger" : "manual",
+		"text" : "戦闘開始と同時に押す！"
+	},
+	{
+		"phase" : 1,
+		"nextPhase" : 2,
+		"trigger" : "manual",
+		"text" : "着地と同時に押す！"
+	},
+	{
+		"phase" : 2,
+		"nextPhase" : 3,
+		"trigger" : "manual",
+		"text" : "着地と同時に押す！"
+	},
+	{
+		"phase" : 3,
+		"nextPhase" : 4,
+		"trigger" : "manual",
+		"text" : "着地と同時に押す！"
+	},
+	{
+		"phase" : 4,
+		"nextPhase" : 5,
+		"trigger" : "manual",
+		"text" : "着地と同時に押す！"
+	},
+	{
+		"phase" : 5,
+		"nextPhase" : 0,
+		"trigger" : "manual",
+		"text" : "Reset（最初に戻る）"
+	}
+]

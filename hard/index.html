@@ -1,2 +1,171 @@
-まだないよ！
-欲しいって人は<a href='http://twitter.com/maccotsan' target='_blank'>@maccotsan</a>にりぷ！
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hard Titan Timer/真たこたいまー:真タイタンの次の行動を音声でお知らせ[新生FF14]</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="どうしても真タイタンに勝てない・・・もうやだ、、、そんなあなたにっ！真タイタンの次の行動を音声でお知らせします。ゆっくりしていってね！">
+    <meta name="author" content="maccotsan">
+    <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+    <link href="/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+
+    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="/css/state.bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="/css/jquery.nouislider.min.css">
+    <link rel="stylesheet" href="/css/titan.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+         <ul class="nav navbar-nav">
+          <a class="navbar-brand" href="/">
+            <i class="glyphicon glyphicon-cloud"></i>
+            Hard Titan Timer/真たこたいまー
+            <span>
+              :<small>真タイタンの次の行動を音声でお知らせ[新生FF14]</small>
+            </span>
+          </a>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+
+      <div class="ninja_onebutton">
+        <script type="text/javascript">
+        //<![CDATA[
+        (function(d){
+        if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_82a050feb697f9d26766f985b73ab86e)=='undefined'){
+            document.write("<sc"+"ript type='text\/javascript' src='http:\/\/omt.shinobi.jp\/b\/82a050feb697f9d26766f985b73ab86e'><\/sc"+"ript>");
+        }else{ 
+            window.NINJA_CO_JP_ONETAG_BUTTON_82a050feb697f9d26766f985b73ab86e.ONETAGButton_Load();}
+        })(document);
+        //]]>
+        </script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+      </div>
+
+      <h1 class='phase-info'>
+        Phase: <span class='phase-count-holder'>0</span>
+        <small>Loop: <span class='loop-count-holder'>1</span></small>
+      </h1>
+
+      <div id='owlCarousels'></div>
+
+      <div class='sound-worning alert alert-warning'>
+        <i class="glyphicon glyphicon-warning-sign"></i> 
+        <a href='#' class='load-sound'>ここを押してサウンドを読み込んでください</a>
+      </div>
+      <div class='sound-success alert alert-success' style='display:none;'>
+        <i class="glyphicon glyphicon-ok"></i> Sound OK
+      </div>
+
+      <div class="progress progress-striped active" style='display:none;'>
+        <div class="progress-bar progress-bar-danger" style="width:100%;"></div>
+      </div>
+
+      <div id='buttons'>
+        <div>
+          <button type='button' class='btn btn-lg btn-success phase-next'>
+            <p class='next-phase-infomation'>
+              Next Phase <span class='next-phase-count-holder'></span>
+              <i class="glyphicon glyphicon-hand-right"></i>
+            </p>
+            <p class='next-phase-trigger-text'>Start</p>
+          </button>
+        </div>
+        <div class='direct-phase-buttons'>
+          <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='1'>Phase1</button>
+          <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='2'>Phase2</button>
+          <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='3'>Phase3</button>
+          <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='4'>Phase4</button>
+          <button type='button' class='btn btn-sm btn-primary phase-change' data-phase='5'>Phase5</button>
+          <button type='button' class='btn btn-sm btn-default phase-reset'>Reset</button>
+
+          <!--
+          <fieldset>
+            <legend>Sound Test</legend>
+            <button type='button' class='btn btn-sm btn-danger load-sound'>Load Sounds</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='landslide'>landslide</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='omomi'>omomi</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='mountain'>mountain</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='gekisin'>gekisin</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='daigekisin'>daigekisin</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='jale'>jale</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='bomb'>bomb</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='minitako'>minitako</button>
+            <button type='button' class='btn btn-sm btn-default play-sound' data-sound='geocrush'>geocrush</button>
+          </fieldset>
+          -->
+
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">
+          [対応環境] Chrome / Firefox / iOS / Android<br>
+          <a href='http://twitter.com/maccotsan' target='_blank'>@maccotsan</a> / 
+          <a href='doc.html'>
+            <i class="glyphicon glyphicon-info-sign"></i>
+            使い方とか
+          </a>
+          <br>
+          <a href='http://ff14.maccotsan.com/' target='_blank'>
+            <i class="glyphicon glyphicon-home"></i>
+            14Dev
+          </a>
+          <br>
+          <a href='http://titan.ff14.maccotsan.com/extream/' target='_blank'>
+            <i class="glyphicon glyphicon-cloud"></i>
+            Extream Titan Timer/極たこたいまー:極タイタンの次の行動を音声でお知らせ[新生FF14]
+          </a>
+          <br>
+          <a href='http://sozaii.ff14.maccotsan.com/' target='_blank'>
+            <i class="glyphicon glyphicon-cloud"></i>
+            Sozaii!! :複数レシピの作成に必要な素材の数を計算しておまとめ</a>
+          <br>
+          記載されている会社名・製品名・システム名などは、各社の商標、または登録商標です。
+          <br>
+          Copyright (C) 2010 - 2013 SQUARE ENIX CO., LTD. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/owl-carousel/owl.carousel.js"></script>
+    <script src="/js/zynga-jukebox/src/Player.js"></script>
+    <script src="/js/zynga-jukebox/src/Manager.js"></script>
+    <script src="/js/searchua.min.js"></script>
+    <script src="/js/titan.js"></script>
+    <script>
+      $(document).ready(function() {
+        var titan = new Titan({
+          jsons: './jsons'
+        })
+        titan.init();
+      });
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-17585278-15', 'maccotsan.com');
+      ga('send', 'pageview');
+    </script>
+
+  </body>
+</html>
